@@ -2,6 +2,7 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         maven { url = 'https://maven.neoforged.net/releases' }
+        maven { url = 'https://maven.minecraftforge.net/' }
     }
 }
 
@@ -19,3 +20,7 @@ project(':neoforge-26-1-1').projectDir = file('multi/neoforge/26-1-1')
 
 include('neoforge-26-1-2')
 project(':neoforge-26-1-2').projectDir = file('multi/neoforge/26-1-2')
+
+// Forge subprojects are standalone — run from within their own folder:
+//   cd multi/forge/26-1-2 && ./gradlew runClient
+// FG 7 doesn't handle composite/parent builds reliably.
